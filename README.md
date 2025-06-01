@@ -1,5 +1,5 @@
 # puttyNet
-A Linux based decentralized messaging and audio call networking application written in c/c++
+A Linux based Advanced Networking Decentralized Messaging and Audio call networking application written in c/c++
 
 **Hardware Requirements:**
 
@@ -42,15 +42,6 @@ To interact with the Wi-Fi card, you'll need to use device-specific APIs. Some e
 * **Security:** Be aware of security implications when modifying or programming a laptop's Wi-Fi card.
 * **Compatibility:** Ensure that your custom firmware is compatible with the laptop's operating system and other devices on the network.
 * **Reverse engineering:** You may need to reverse engineer the Wi-Fi card's device driver code, which can be a complex task.
-
-If you're interested in programming a laptop's Wi-Fi card, I recommend starting with Linux or Windows, as they have more mature documentation and communities. Additionally, 
-consider joining online forums or communities dedicated to low-level programming and embedded systems for support and guidance.
-
->>> write me a decentralized communication node to node c code for linux that utilizes the wifi adapter and deosnt need to connect to wifi to work 
-Here's an example of a basic decentralized communication node in C, using Linux as the operating system. This implementation uses the `libpcap` library to capture packets 
-from the network interface (in this case, the WiFi adapter), and then broadcasts them to all other nodes on the network.
-
-**Note:** This code is for educational purposes only and should not be used in production without proper security auditing and testing.
 
 **Dependencies:**
 
@@ -178,10 +169,6 @@ gcc -o node node.c -lpcap -lef
 ```
 This will generate an executable file called `node` that you can run on your Linux system.
 
-Please note that this is a basic example and should not be used in production without proper security auditing and testing.
-
->>> what about detecting how far other devices in the same room are, windows, laptops, wifi     
-Detecting the distance of other devices in the same room can be done using various methods, including:
 
 1. **Radar-based approach:** This method uses a radar antenna to emit radio waves and measure the time it takes for them to bounce back from objects in the environment.
 2. **Ultrasonic-based approach:** This method uses high-frequency ultrasonic waves (typically above 20 kHz) to detect the distance of objects.
@@ -313,12 +300,6 @@ float calculate_distance(float measured_time) {
 ```
 This code snippet uses an ultrasonic sensor module to detect the distance of nearby devices and estimates the MAC address from a received signal.
 
-Please note that these examples are simplified and might require modifications to suit your specific use case. Additionally, you may need to consider factors like noise, 
-interference, and environmental conditions when implementing these methods.
-
->>> only using wifi card of laptop
-Using only the Wi-Fi card on a laptop to detect the distance of nearby devices is possible through techniques such as:
-
 1. **Wi-Fi-based Distance Estimation**: This method uses the Received Signal Strength Indicator (RSSI) to estimate the distance between two Wi-Fi devices. The RSSI value 
 decreases with increasing distance.
 2. **Wi-Fi-based Time-Domain Reflectometry (TDR)**: This method uses the time it takes for a Wi-Fi signal to bounce back from an object to estimate its distance.
@@ -380,14 +361,6 @@ print("Estimated distance:", estimated_distance, "m")
 ```
 This code snippet uses the `libwlan` library to access the Wi-Fi card's transmit and receive times and estimates the distance of nearby devices based on those values.
 
-Please note that these examples are simplified and might require modifications to suit your specific use case. Additionally, you may need to consider factors like noise, 
-interference, and environmental conditions when implementing these methods.
-
->>> can laptop wifi card be used to detect which direction another wifi laptop deviceis located 360 degree? or is it onmipresent
-Yes, a laptop's Wi-Fi card can be used to detect the direction of another Wi-Fi-laptop device in a 360-degree range. This is possible because Wi-Fi signals propagate in all 
-directions from an antenna, and by measuring the RSSI (Received Signal Strength Indicator) values at multiple points around the laptop, you can estimate the bearing 
-(direction) of the other laptop.
-
 Here's how it works:
 
 1. **RSSI Measurement**: The laptop's Wi-Fi card measures the RSSI value of nearby Wi-Fi networks, including the unknown device.
@@ -447,6 +420,3 @@ bearings = np.arctan2(np.diff(rssi_values), np.sum(rssi_values))
 
 print("Bearing of unknown device:", bearings)
 ```
-Note that this is a simplified example and may require modifications to suit your specific use case. Additionally, the accuracy of direction estimation will depend on 
-various factors, including the quality of the Wi-Fi interface, the environment, and the distance between the laptops.
-
