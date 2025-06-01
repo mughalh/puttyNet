@@ -1,0 +1,2 @@
+gcc main.c -o putty `pkg-config --cflags --libs gtk+-3.0 gstreamer-1.0` -lm
+
